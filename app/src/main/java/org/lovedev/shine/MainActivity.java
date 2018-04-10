@@ -18,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.Vibrator:
                 startActivity(new Intent(this,VibratorActivity.class));
                 break;
+            case R.id.audio:
+                startActivity(new Intent(this,AudioActivity.class));
+                break;
             default:
                 break;
         }
