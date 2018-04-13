@@ -6,7 +6,7 @@ android {
 
 
     defaultConfig {
-        applicationId "org.lovedev.codingcamera"
+        applicationId "org.lovedev.udpport"
         minSdkVersion 21
         targetSdkVersion 27
         versionCode 1
@@ -18,27 +18,8 @@ android {
 
     buildTypes {
         release {
-            signingConfig signingConfigs.debug
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        debug {
-            signingConfig signingConfigs.debug
-        }
-    }
-
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs']
-        }
-    }
-
-    signingConfigs {
-        debug {
-            keyAlias 'shineAndroid'
-            keyPassword 'shineAndroid'
-            storeFile file('../config/shine.jks')
-            storePassword 'shineAndroid'
         }
     }
 
@@ -46,7 +27,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
     implementation 'com.github.KevinLoveGitHub:Util:1.4'
+
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
