@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 public void run() {
                     mCamera.open(ctrlBlock);
                     try {
-                        mCamera.setPreviewSize(640, 480, UVCCamera.FRAME_FORMAT_YUYV);
+                        mCamera.setPreviewSize(320, 240, UVCCamera.FRAME_FORMAT_YUYV);
                         mSurfaceHolder.addCallback(mSurfaceCallback);
                     } catch (final IllegalArgumentException e) {
                         Log.e(TAG, "run: ", e);
@@ -173,6 +173,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mUSBMonitor.unregister();
+    }
 
     /**
      * 设置 摄像头的角度

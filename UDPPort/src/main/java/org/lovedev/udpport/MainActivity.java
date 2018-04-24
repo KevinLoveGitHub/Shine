@@ -3,6 +3,7 @@ package org.lovedev.udpport;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 
 import org.lovedev.util.ExecutorHelpers;
 import org.lovedev.util.LogUtils;
@@ -10,6 +11,7 @@ import org.lovedev.util.LogUtils;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
+import java.net.InetAddress;
 import java.net.InetSocketAddress;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         ExecutorHelpers.getNetworkIO().execute(new Runnable() {
             @Override
             public void run() {
-                final int PORT = 8899;
+                final int PORT = 52300;
                 // 定义每个数据报的最大大小为4KB
                 final int DATA_LEN = 4096;
                 // 定义接收网络数据的字节数组
@@ -57,6 +59,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void send(View view) {
+        ExecutorHelpers.getNetworkIO().execute(new Runnable() {
 
+            @Override
+            public void run() {
+                byte[] buf="hello android! ".getBytes();
+                DatagramSocket sendSocket = null;
+                try {
+                    sendSocket = new DatagramSocket();
+                    EditText editText = findViewById(R.id.edit);
+                    String address = editText.getText().toString().trim();
+                    InetAddress serverAddr = InetAddress.getByName(address);
+                    DatagramPacket outPacket = new DatagramPacket(buf, buf.length,serverAddr, 52300);
+                    sendSocket.send(outPacket);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                if (sendSocket != null) {
+                    sendSocket.close();
+                }
+            }
+        });
     }
 }
