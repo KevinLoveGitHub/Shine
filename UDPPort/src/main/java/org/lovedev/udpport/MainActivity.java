@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.lovedev.util.ExecutorHelpers;
 import org.lovedev.util.LogUtils;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         ExecutorHelpers.getNetworkIO().execute(new Runnable() {
             @Override
             public void run() {
-                final int PORT = 52300;
+                final int PORT = 7788;
                 // 定义每个数据报的最大大小为4KB
                 final int DATA_LEN = 4096;
                 // 定义接收网络数据的字节数组
@@ -47,8 +48,14 @@ public class MainActivity extends AppCompatActivity {
                     while (mDatagramSocket != null && !mDatagramSocket.isClosed()) {
                         // 读取Socket中的数据，读到的数据放入inPacket封装的数组里
                         mDatagramSocket.receive(inPacket);
-                        String msg = new String(inBuff, 0, inPacket.getLength());
+                        final String msg = new String(inBuff, 0, inPacket.getLength());
                         LogUtils.i(TAG, msg);
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
                 } catch (IOException e) {
                     LogUtils.d(TAG, "run: " + e.getMessage());
@@ -63,14 +70,14 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                byte[] buf="hello android! ".getBytes();
+                byte[] buf="start,172.168.1.111,8899".getBytes();
                 DatagramSocket sendSocket = null;
                 try {
                     sendSocket = new DatagramSocket();
                     EditText editText = findViewById(R.id.edit);
                     String address = editText.getText().toString().trim();
                     InetAddress serverAddr = InetAddress.getByName(address);
-                    DatagramPacket outPacket = new DatagramPacket(buf, buf.length,serverAddr, 52300);
+                    DatagramPacket outPacket = new DatagramPacket(buf, buf.length,serverAddr, 7788);
                     sendSocket.send(outPacket);
                 } catch (IOException e) {
                     e.printStackTrace();

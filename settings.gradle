@@ -1,1 +1,2 @@
-include ':app', ':codingCamera', ':codingCamera', ':UDPPort'
+include ':app', ':codingCamera', ':codingCamera', ':UDPPort', ':tcp', ':VLCPreview'
+include  ':libvlc'
