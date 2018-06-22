@@ -1,0 +1,2 @@
+include ':app', ':codingCamera', ':codingCamera', ':UDPPort', ':tcp', ':VLCPreview', ':WebRTC'
+include  ':libvlc','libwebrtc'

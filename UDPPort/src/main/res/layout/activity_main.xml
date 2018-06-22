@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context=".MainActivity">
+
+	<EditText
+		android:id="@+id/edit"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"/>
+
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:onClick="initUDP"
+		android:text="Start UDP Port"/>
+
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:onClick="send"
+		android:text="Send Message"/>
+
+
+
+</android.support.v7.widget.LinearLayoutCompat>

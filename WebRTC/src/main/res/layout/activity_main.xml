@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".MainActivity">
+
+	<EditText
+		android:id="@+id/et"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:textColor="@color/colorAccent"/>
+
+	<Button
+		android:id="@+id/start"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:onClick="start"
+		android:text="start video"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/et"/>
+
+	<Button
+		android:id="@+id/stop"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:onClick="stop"
+		android:text="stop video"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/start"/>
+
+	<Button
+		android:id="@+id/start_client"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:onClick="startAsClient"
+		android:text="start video as client"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/stop"/>
+
+	<Button
+		android:id="@+id/start_service"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:onClick="startAsService"
+		android:text="start video as service"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/start_client"/>
+
+
+	<LinearLayout
+		android:id="@+id/view"
+		android:layout_width="300dp"
+		android:layout_height="300dp"
+		android:orientation="horizontal"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/start_service"/>
+
+</android.support.constraint.ConstraintLayout>
