@@ -84,21 +84,30 @@ public class WebVideoRtcUtils {
     private int musicMax;
     private AudioManager mAudioManager;
 
+
     public void startSpeak(Context context,String remoteIP,LinearLayout mLlRemoteSurface){
-         startCall(context, remoteIP, mLlRemoteSurface,System.currentTimeMillis());
-    }
-    public void startSpeak(Context context,String remoteIP,LinearLayout mLlRemoteSurface,long startTime){
-//        remoteIP ="127.0.0.1";
-        startCall(context, remoteIP, mLlRemoteSurface,startTime);
+        startCall(context, remoteIP, mLlRemoteSurface, true, null);
     }
 
-    public void startCall( Context context,String remoteIP,LinearLayout mLlRemoteSurface,long startTime) {
+    public void startVideoWithoutVoice(Context context,String remoteIP,LinearLayout layout) {
+        startCall(context, remoteIP, layout, false, null);
+    }
+
+    public void startVideoWithoutVoice(Context context,String remoteIP,LinearLayout layout, IViEAndroidCallback callback) {
+        startCall(context, remoteIP, layout, false, callback);
+    }
+
+    public void startVideo(Context context, String remoteIP, LinearLayout layout, IViEAndroidCallback callback) {
+        startCall(context, remoteIP, layout, false, callback);
+    }
+
+    private void startCall(Context context, String remoteIP, LinearLayout mLlRemoteSurface, boolean enableVoice, IViEAndroidCallback callback) {
         stopCall();
         init(context);
         mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, callVol * musicMax / 100, 0);
         startSpeakTime = System.currentTimeMillis();
         this.mLlRemoteSurface = mLlRemoteSurface;
-        startCall(remoteIP, true, false, true, true,null);
+        startCall(remoteIP, true, enableVoice, true, true, callback);
     }
 
     public void setCallVol(int callVol) {
@@ -118,20 +127,20 @@ public class WebVideoRtcUtils {
         return voERunning;
     }
 
-    public void initVieAndroidAPI(Context context) {
+    private void initVieAndroidAPI(Context context) {
         if (null == vieAndroidAPI) {
             vieAndroidAPI = new ViEAndroidJavaAPI(context);
         }
         int setupVoE = setupVoE();
-        int VideoEngine = vieAndroidAPI.GetVideoEngine();
+        int videoEngine = vieAndroidAPI.GetVideoEngine();
         int init = vieAndroidAPI.Init(enableTrace);
         Log.e(TAG, "setupVoE  = "
                 + setupVoE
                 + "   VideoEngine = "
-                + VideoEngine
+                + videoEngine
                 + "   init = "
                 + init);
-        if (0 > setupVoE || 0 > VideoEngine ||
+        if (0 > setupVoE || 0 > videoEngine ||
                 0 > init) {
             // Show dialog
             AlertDialog alertDialog = new AlertDialog.Builder(mContext).create();
@@ -140,6 +149,7 @@ public class WebVideoRtcUtils {
             alertDialog.setButton(
                     DialogInterface.BUTTON_POSITIVE,
                     "OK", new DialogInterface.OnClickListener() {
+                        @Override
                         public void onClick(DialogInterface dialog, int which) {
                             return;
                         }
@@ -183,21 +193,6 @@ public class WebVideoRtcUtils {
         mContext = context;
         initVieAndroidAPI(mContext);
         isInit = true;
-    }
-
-
-
-
-    public void startCall(String remoteIP,IViEAndroidCallback callback) {
-
-        startCall(remoteIP, true, true, true, true,callback);
-    }
-
-
-
-    public void startCall(String remoteIP) {
-
-        startCall(remoteIP, true, true, true, true,null);
     }
 
     public void startCall(String remoteIP, boolean isSpeaker, boolean enableVoice,
