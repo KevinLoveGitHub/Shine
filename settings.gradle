@@ -1,2 +1,2 @@
-include ':app', ':codingCamera', ':codingCamera', ':UDPPort', ':tcp', ':VLCPreview', ':WebRTC'
+include ':app', ':codingCamera', ':codingCamera', ':UDPPort', ':tcp', ':VLCPreview', ':WebRTC', ':CustomPlugins'
 include  ':libvlc','libwebrtc'
