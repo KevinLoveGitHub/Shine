@@ -29,6 +29,8 @@ import org.videolan.libvlc.util.HWDecoderUtil;
 import org.videolan.libvlc.util.VLCUtil;
 
 import java.io.FileDescriptor;
+import java.util.Iterator;
+import java.util.List;
 
 @SuppressWarnings("unused, JniMissingFunction")
 public class Media extends VLCObject<Media.Event> {
@@ -908,4 +910,17 @@ public class Media extends VLCObject<Media.Event> {
     private native Slave[] nativeGetSlaves();
 
     private native Stats nativeGetStats();
+
+    public <E extends Comparable<E>> E max(List<E> list) {
+        Iterator<E> iterator = list.iterator();
+        E max = iterator.next();
+        while (iterator.hasNext()) {
+            E next = iterator.next();
+            if (next.compareTo(max) > 0) {
+                max = next;
+            }
+        }
+
+        return max;
+    }
 }
