@@ -33,5 +33,6 @@ dependencies {
     implementation 'com.github.KevinLoveGitHub:Util:1.9.2'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation project(':libwebrtc')
+    implementation 'org.lovedev:webrtc:0.0.1'
+//    implementation project(':libwebrtc')
 }

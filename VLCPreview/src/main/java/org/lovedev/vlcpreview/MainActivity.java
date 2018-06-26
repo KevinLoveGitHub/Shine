@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     startPreview(null);
                     break;
                 case STOP_VIDEO:
-                    stopPreview(null);
+                    mHandler.sendEmptyMessageDelayed(START_VIDEO, 1000);
                     break;
                 default:
                     break;
@@ -111,6 +111,6 @@ public class MainActivity extends AppCompatActivity {
             mMediaPlayer.stop();
             mMediaPlayer.release();
         }
-        mHandler.sendEmptyMessageDelayed(START_VIDEO, 1000);
+        mTime.stop();
     }
 }
