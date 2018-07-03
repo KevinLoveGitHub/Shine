@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:onClick="red"
+		android:text="红"/>
+
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:onClick="redFlash"
+		android:text="红闪烁"/>
+
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:onClick="orange"
+		android:text="橙"/>
+
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:onClick="orangeFlash"
+		android:text="橙闪烁"/>
+
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:onClick="blue"
+		android:text="蓝"/>
+
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:onClick="blueFlash"
+		android:text="蓝闪烁"/>
+
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:onClick="green"
+		android:text="绿"/>
+
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:onClick="greenFlash"
+		android:text="绿闪烁"/>
+
+	<Button
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:onClick="destroy"
+		android:text="灭"/>
+
+	<Button
+		android:layout_width="match_parent"
+		android:text="返回"
+		android:onClick="back"
+		android:layout_height="50dp"/>
+</LinearLayout>

@@ -7,7 +7,7 @@
 	android:layout_height="wrap_content"
 	android:background="@color/transparent"
 	android:orientation="vertical"
-	tools:context="org.lovedev.voip_demo.MainActivity">
+	tools:context="org.lovedev.voip_demo.TenTestActivity">
 
 	<VideoView
 		android:id="@+id/video_view"

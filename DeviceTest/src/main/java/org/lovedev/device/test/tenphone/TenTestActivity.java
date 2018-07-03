@@ -1,4 +1,4 @@
-package org.lovedev.voip_demo;
+package org.lovedev.device.test.tenphone;
 
 import android.content.DialogInterface;
 import android.net.Uri;
@@ -14,6 +14,8 @@ import android.widget.VideoView;
 
 import com.telpo.telephony.support.helper.DeviceHelper;
 
+import org.lovedev.device.test.R;
+import org.lovedev.device.test.SuClient;
 import org.lovedev.util.ExecutorHelpers;
 import org.lovedev.util.LogUtils;
 import org.lovedev.util.UDPHelper;
@@ -24,7 +26,7 @@ import org.videolan.libvlc.MediaPlayer;
 
 import java.util.Arrays;
 
-public class MainActivity extends AppCompatActivity {
+public class TenTestActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private int count = 0;
@@ -40,12 +42,14 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer mMediaPlayer;
     private String videoPath;
     private VideoView mVideoView;
+    private int mWidth = -1;
+    private int mHeight = -1;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_ten_test);
         setupMediaPlayer();
         UDPHelper.openUDPPort(8899, new UDPHelper.UDPMessageListener() {
             @Override
@@ -57,13 +61,11 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             videoPath = messages[1];
-                            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this, R.style.dialog);
+                            AlertDialog.Builder builder = new AlertDialog.Builder(TenTestActivity.this, R.style.dialog);
                             mAlertDialog = builder.create();
 
                             View view = View.inflate(getApplicationContext(), R.layout.dialog_call, null);
-                            if (mVideoView == null) {
-                                mVideoView = view.findViewById(R.id.video_view);
-                            }
+                            mVideoView = view.findViewById(R.id.video_view);
                             mAlertDialog.setView(view);
                             mAlertDialog.show();
                             mAlertDialog.setOnKeyListener(new DialogInterface.OnKeyListener() {
@@ -114,8 +116,8 @@ public class MainActivity extends AppCompatActivity {
         videoView.post(new Runnable() {
             @Override
             public void run() {
-                final int width = videoView.getWidth();
-                final int height = videoView.getHeight();
+                mWidth = videoView.getWidth();
+                mHeight = videoView.getHeight();
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -124,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
                         mMediaPlayer = new MediaPlayer(media);
                         IVLCVout vlcVout = mMediaPlayer.getVLCVout();
                         vlcVout.setVideoView(videoView);
-                        vlcVout.setWindowSize(width, height);
+                        vlcVout.setWindowSize(mWidth, mHeight);
                         vlcVout.attachViews();
                         mMediaPlayer.setVideoTrackEnabled(true);
                         mMediaPlayer.play();

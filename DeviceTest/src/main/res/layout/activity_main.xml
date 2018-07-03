@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:background="@drawable/bg"
-	tools:context="org.lovedev.voip_demo.MainActivity">
+	android:orientation="vertical"
+	tools:context=".MainActivity">
 
 	<Button
 		android:layout_width="match_parent"
-		android:onClick="getState"
+		android:text="十寸电话机测试"
+		android:onClick="tenTest"
 		android:layout_height="50dp"/>
-</android.support.constraint.ConstraintLayout>
+	<Button
+		android:layout_width="match_parent"
+		android:text="门口屏测试"
+		android:onClick="doorScreenTest"
+		android:layout_height="50dp"/>
+
+	<Button
+		android:layout_width="match_parent"
+		android:text="退出程序"
+		android:onClick="finish"
+		android:layout_height="50dp"/>
+</LinearLayout>

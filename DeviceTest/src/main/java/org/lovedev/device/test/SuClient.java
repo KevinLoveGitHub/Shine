@@ -1,4 +1,4 @@
-package org.lovedev.voip_demo;
+package org.lovedev.device.test;
 
 //~--- JDK imports ------------------------------------------------------------
 
