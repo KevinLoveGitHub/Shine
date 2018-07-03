@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         DisplayMetrics dm = getResources().getDisplayMetrics();
         mWScreen = dm.widthPixels;
         mHScreen = dm.heightPixels;
-
     }
 
     /**
@@ -73,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
         mMediaPlayer = new MediaPlayer(media);
         IVLCVout vlcVout = mMediaPlayer.getVLCVout();
         vlcVout.setVideoView(videoView);
-        vlcVout.setWindowSize(mWScreen, mHScreen);
+//        vlcVout.setWindowSize(mWScreen, mHScreen);
+        vlcVout.setWindowSize(videoView.getWidth(), videoView.getHeight());
         vlcVout.attachViews();
 
         mMediaPlayer.setVideoTrackEnabled(true);
