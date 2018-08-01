@@ -1,2 +1,2 @@
-include ':app', ':codingCamera', ':codingCamera', ':UDPPort', ':VLCPreview', ':WebRTC'
+include ':app', ':codingCamera', ':codingCamera', ':UDPPort', ':VLCPreview', ':WebRTC', ':mqtt'
 include  ':libvlc',':libwebrtc', ':DeviceTest'

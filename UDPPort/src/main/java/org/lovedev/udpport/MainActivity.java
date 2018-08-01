@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import org.lovedev.util.ExecutorHelpers;
 import org.lovedev.util.LogUtils;
+import org.lovedev.util.UDPHelper;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -87,5 +88,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void sendUPDTest(View view) {
+        UDPHelper.sendUDPMessage("quit", "127.0.0.1", 12310);
     }
 }
