@@ -1,0 +1,39 @@
+ext {
+    def versionAndroidSDK = '27.1.1'
+    def versionConstraintLayout = '1.1.2'
+
+    def versionDagger = '2.7'
+    def versionRxJava = '1.2.0'
+    def versionRxAndroid = '1.2.1'
+    def versionOkHttp = '3.4.1'
+    def versionGson = '2.7'
+
+    def versionUtil = '0.0.5'
+    def versionJUnit = '4.12'
+
+    def androidLibs = [
+            appCompat: [group: 'com.android.support', name: 'appcompat-v7', version: versionAndroidSDK],
+            constraintLayout: [group: 'com.android.support.constraint', name: 'constraint-layout', version: versionConstraintLayout]
+    ]
+
+    def libs = [
+            util: [group: 'org.lovedev', name: 'common-util', version: versionUtil]
+    ]
+
+    def testLibs = [
+            junit: [group: 'junit', name: 'junit', version: versionJUnit]
+    ]
+
+
+    appDependencies = [
+            [configuration: "implementation", dependency: androidLibs.appCompat],
+            [configuration: "implementation", dependency: androidLibs.constraintLayout],
+            [configuration: "implementation", dependency: libs.util],
+            [configuration: "testImplementation", dependency: testLibs.junit],
+//            [configuration: "compile", dependency: libs.dagger],
+//            [configuration: "apt", dependency: libs.daggerCompiler],
+//            [configuration: "compile", dependency: libs.rxAndroid],
+//            [configuration: "compile", dependency: libs.rxJava],
+    ]
+
+}

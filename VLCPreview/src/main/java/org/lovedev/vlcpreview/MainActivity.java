@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         String address = ((EditText) findViewById(R.id.et)).getText().toString().trim();
         SurfaceView videoView = findViewById(R.id.videoView);
         showVideo(address, videoView);
-        mHandler.sendEmptyMessageDelayed(STOP_VIDEO, 10 * 60 * 1000);
+//        mHandler.sendEmptyMessageDelayed(STOP_VIDEO, 10 * 60 * 1000);
         mTime.setBase(SystemClock.elapsedRealtime());
         mTime.start();
     }

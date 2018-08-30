@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+apply from: '../dependencies.gradle'
+android {
+    compileSdkVersion 27
+
+
+
+    defaultConfig {
+        applicationId "org.lovedev.mqtt_android"
+        minSdkVersion 17
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    rootProject.appDependencies.each {
+        add(it.configuration, it.dependency)
+    }
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
+    implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+}
