@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".MainActivity">
+
+	<Button
+		android:id="@+id/speak"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="start speak"
+		android:onClick="speak"
+		app:layout_constraintTop_toTopOf="parent"/>
+
+	<Button
+		android:id="@+id/start_talk_m"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:onClick="startM"
+		android:text="start Talk m"
+		app:layout_constraintTop_toBottomOf="@id/speak"/>
+
+	<Button
+		android:id="@+id/start_talk_p"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:onClick="startP"
+		android:text="start Talk p"
+		app:layout_constraintTop_toBottomOf="@id/start_talk_m"/>
+
+	<Button
+		android:id="@+id/stop"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:onClick="stop"
+		android:text="stop"
+		app:layout_constraintTop_toBottomOf="@+id/start_talk_p"/>
+
+</android.support.constraint.ConstraintLayout>
