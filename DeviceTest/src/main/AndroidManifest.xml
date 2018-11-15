@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest package="org.lovedev.device.test"
+		  android:sharedUserId="android.uid.system"
 		  xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<uses-feature android:name="telpo.software.telephony"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
 
 	<application
 		android:allowBackup="true"
@@ -11,14 +13,22 @@
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
 		<activity android:name=".MainActivity">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN"/>
-				<category android:name="android.intent.category.LAUNCHER"/>
-			</intent-filter>
+			<!--<intent-filter>-->
+				<!--<action android:name="android.intent.action.MAIN"/>-->
+
+				<!--<category android:name="android.intent.category.LAUNCHER"/>-->
+			<!--</intent-filter>-->
 		</activity>
 		<activity android:name=".tenphone.TenTestActivity">
 		</activity>
 		<activity android:name=".doorscreen.DoorScreenTestActivity"/>
+		<activity android:name=".a64.A64TestActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
 	</application>
 
 </manifest>

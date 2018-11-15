@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".MainActivity">
+
+	<SurfaceView
+		android:id="@+id/sv_preview"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		app:layout_constraintBottom_toBottomOf="parent"/>
+
+	<Button
+		android:id="@+id/btn_start"
+		android:onClick="start"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="start"/>
+
+	<Button
+		android:id="@+id/btn_change"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="chang source"
+		app:layout_constraintStart_toEndOf="@id/btn_start"/>
+	<Button
+		android:id="@+id/btn_top"
+		android:layout_width="wrap_content"
+		android:onClick="top"
+		android:layout_height="wrap_content"
+		android:text="上"
+		app:layout_constraintStart_toEndOf="@id/btn_change"/>
+
+	<Button
+		android:id="@+id/btn_bottom"
+		android:layout_width="wrap_content"
+		android:onClick="bottom"
+		android:layout_height="wrap_content"
+		android:text="下"
+		app:layout_constraintStart_toEndOf="@id/btn_top"/>
+
+	<Button
+		android:id="@+id/btn_left"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:onClick="left"
+		android:text="左"
+		app:layout_constraintStart_toEndOf="@id/btn_bottom"/>
+
+	<Button
+		android:id="@+id/btn_right"
+		android:layout_width="wrap_content"
+		android:onClick="right"
+		android:layout_height="wrap_content"
+		android:text="右"
+		app:layout_constraintStart_toEndOf="@id/btn_left"/>
+
+	<Button
+		android:id="@+id/btn_zoom_in"
+		android:layout_width="wrap_content"
+		android:onClick="zoomIn"
+		android:layout_height="wrap_content"
+		android:text="缩放"
+		app:layout_constraintStart_toEndOf="@id/btn_right"/>
+
+
+	<Button
+		android:id="@+id/btn_zoom_out"
+		android:layout_width="wrap_content"
+		android:onClick="zoomOut"
+		android:layout_height="wrap_content"
+		android:text="放大"
+		app:layout_constraintStart_toEndOf="@id/btn_zoom_in"/>
+</android.support.constraint.ConstraintLayout>

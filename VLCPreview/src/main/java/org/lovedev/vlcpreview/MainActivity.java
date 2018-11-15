@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
      * @param path  视频流的路径 shine_net://tcp@172.168.2.156:5020?dec=hard?mode=quene?cache=300?fps=25
      * @param videoView 播放视频的控件
      */
-    private void showVideo(final String path, SurfaceView videoView) {
+    private void showVideo(String path, SurfaceView videoView) {
         Media media = new Media(mLibVLC, Uri.parse(path));
         media.setHWDecoderEnabled(true, true);
         mMediaPlayer = new MediaPlayer(media);
@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         mMediaPlayer.play();
         mMediaPlayer.setEventListener(mEventListener);
     }
+
 
     private void stopPlayStream() {
         if (mMediaPlayer != null) {

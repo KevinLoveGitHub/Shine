@@ -1,2 +1,2 @@
-include ':app', ':codingCamera', ':codingCamera', ':UDPPort', ':VLCPreview', ':WebRTC', ':mqtt', ':mqtt-android', ':webrtc-mqtt', ':dialog', ':harddecode', ':text-to-speech'
+include ':app', ':codingCamera', ':codingCamera', ':UDPPort', ':VLCPreview', ':WebRTC', ':mqtt', ':mqtt-android', ':webrtc-mqtt', ':harddecode', ':text-to-speech', ':shinesdkv918', ':preview828', ':mmplayer', ':libharddecode', ':chang_stream_828'
 include  ':libvlc',':libwebrtc', ':DeviceTest'

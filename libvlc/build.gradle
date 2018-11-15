@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply from: 'upload.gradle'
 android {
     compileSdkVersion 25
-    buildToolsVersion '27.0.3'
+    buildToolsVersion '28.0.3'
 
     sourceSets {
         main {
@@ -26,6 +26,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+    }
+    defaultConfig {
+        minSdkVersion  9
     }
 
     dependencies {

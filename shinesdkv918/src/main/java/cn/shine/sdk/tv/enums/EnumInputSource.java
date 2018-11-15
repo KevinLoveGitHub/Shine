@@ -1,0 +1,60 @@
+package cn.shine.sdk.tv.enums;
+
+/**
+ * 封装信号源类型的枚举类
+ * @author 宋疆疆
+ * @date 2014年7月14日 下午2:24:31
+ */
+public enum EnumInputSource {
+	E_INPUT_SOURCE_VGA, // /<VGA input
+	E_INPUT_SOURCE_ATV, // /<TV input
+
+	E_INPUT_SOURCE_CVBS, // /<AV 1
+	E_INPUT_SOURCE_CVBS2, // /<AV 2
+	E_INPUT_SOURCE_CVBS3, // /<AV 3
+	E_INPUT_SOURCE_CVBS4, // /<AV 4
+	E_INPUT_SOURCE_CVBS5, // /<AV 5
+	E_INPUT_SOURCE_CVBS6, // /<AV 6
+	E_INPUT_SOURCE_CVBS7, // /<AV 7
+	E_INPUT_SOURCE_CVBS8, // /<AV 8
+	E_INPUT_SOURCE_CVBS_MAX, // /<AV max
+
+	E_INPUT_SOURCE_SVIDEO, // /<S-video 1
+	E_INPUT_SOURCE_SVIDEO2, // /<S-video 2
+	E_INPUT_SOURCE_SVIDEO3, // /<S-video 3
+	E_INPUT_SOURCE_SVIDEO4, // /<S-video 4
+	E_INPUT_SOURCE_SVIDEO_MAX, // /<S-video max
+
+	E_INPUT_SOURCE_YPBPR, // /<Component 1
+	E_INPUT_SOURCE_YPBPR2, // /<Component 2
+	E_INPUT_SOURCE_YPBPR3, // /<Component 3
+	E_INPUT_SOURCE_YPBPR_MAX, // /<Component max
+
+	E_INPUT_SOURCE_SCART, // /<Scart 1
+	E_INPUT_SOURCE_SCART2, // /<Scart 2
+	E_INPUT_SOURCE_SCART_MAX, // /<Scart max
+
+	E_INPUT_SOURCE_HDMI, // /<HDMI 1
+	E_INPUT_SOURCE_HDMI2, // /<HDMI 2
+	E_INPUT_SOURCE_HDMI3, // /<HDMI 3
+	E_INPUT_SOURCE_HDMI4, // /<HDMI 4
+	E_INPUT_SOURCE_HDMI_MAX, // /<HDMI max
+
+	E_INPUT_SOURCE_DTV, // /<DTV
+
+	E_INPUT_SOURCE_DVI, // /<DVI 1
+	E_INPUT_SOURCE_DVI2, // /<DVI 2
+	E_INPUT_SOURCE_DVI3, // /<DVI 2
+	E_INPUT_SOURCE_DVI4, // /<DVI 4
+	E_INPUT_SOURCE_DVI_MAX, // /<DVI max
+
+	// Application source
+	E_INPUT_SOURCE_STORAGE, // /<Storage
+	E_INPUT_SOURCE_KTV, // /<KTV
+	E_INPUT_SOURCE_JPEG, // /<JPEG
+	E_INPUT_SOURCE_DTV2, // /<DTV2
+	E_INPUT_SOURCE_STORAGE2, // /<Storage2
+
+	E_INPUT_SOURCE_NUM, // /<number of the source
+	E_INPUT_SOURCE_NONE, // /<NULL input
+}

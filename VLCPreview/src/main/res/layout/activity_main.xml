@@ -16,7 +16,7 @@
 		app:layout_constraintRight_toRightOf="parent"/>
 
 	<EditText
-		android:text="shine_net://tcp@172.168.1.121:7799?cache=400"
+		android:text="http://172.168.64.49:5000"
 		android:id="@+id/et"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:onClick="startPreview"
-		android:text="start preview"
+		android:text="开始播放"
 		app:layout_constraintLeft_toLeftOf="parent"
 		app:layout_constraintRight_toRightOf="parent"
 		app:layout_constraintTop_toBottomOf="@id/et"/>
@@ -39,7 +39,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:onClick="stopPreview"
-		android:text="stop preview"
+		android:text="停止播放"
 		app:layout_constraintLeft_toLeftOf="parent"
 		app:layout_constraintRight_toRightOf="parent"
 		app:layout_constraintTop_toBottomOf="@id/btn_start"/>

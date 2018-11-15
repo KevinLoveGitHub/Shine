@@ -23,8 +23,4 @@ public class MainActivity extends AppCompatActivity {
     public void doorScreenTest(View view) {
         startActivity(new Intent(this, DoorScreenTestActivity.class));
     }
-
-    public void finish(View view) {
-        finish();
-    }
 }

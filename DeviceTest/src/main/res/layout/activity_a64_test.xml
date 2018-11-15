@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	tools:context="org.lovedev.device.test.a64.A64TestActivity">
+
+	<Button
+		android:id="@+id/et_format"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="设置时间"/>
+
+	<Button
+		android:id="@+id/btn_format"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="校准时间"/>
+
+	<Button
+		android:id="@+id/btn_current_time"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="获取当前时间"/>
+
+
+	<EditText
+		android:id="@+id/et_reboot"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="设置多少分钟后开机"
+		android:inputType="number"/>
+
+	<Button
+		android:id="@+id/btn_reboot"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="定时开关机"/>
+
+
+	<Button
+		android:id="@+id/et_reboot2"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="设置关机时间"/>
+
+	<Button
+		android:id="@+id/et_reboot3"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="设置开机时间"/>
+
+	<Button
+		android:id="@+id/et_reboot4"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="定时开关机"/>
+
+
+</LinearLayout>
